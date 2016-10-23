@@ -1,0 +1,36 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+module:testrunner
+
+GET     /                                       Application.Index
+
+GET     /universities                           Universities.Index
+GET     /universities/:id                       Universities.Show
+POST    /universities                           Universities.Create
+PUT     /universities/:id                       Universities.Update
+DELETE  /universities/:id                       Universities.Delete
+
+
+GET     /degrees                                Degrees.Index
+GET     /degrees/:id                            Degrees.Show
+POST    /degrees                                Degrees.Create
+PUT     /degrees/:id                            Degrees.Update
+DELETE  /degrees/:id                            Degrees.Delete
+
+GET     /courses                                Courses.Index
+GET     /courses/:id                            Courses.Show
+POST    /courses                                Courses.Create
+PUT     /courses/:id                            Courses.Update
+DELETE  /courses/:id                            Courses.Delete
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/*filepath                       Static.Serve("public")
+
+# Catch all
+*       /:controller/:action                    :controller.:action
