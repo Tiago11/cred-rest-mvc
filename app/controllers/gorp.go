@@ -53,12 +53,12 @@ func InitDB() {
     panic(err)
   }
 
-  degree := &models.Degree{0, 0, "Ingenieria en Computacion", 450, university, nil}
+  degree := &models.Degree{0, 1, "Ingenieria en Computacion", 450, university, nil}
   if err := Dbm.Insert(degree); err != nil {
     panic(err)
   }
 
-  course := &models.Course{0, 0, "MAA", 10, degree}
+  course := &models.Course{0, 1, "MAA", 10, degree}
   if err := Dbm.Insert(course); err != nil {
     panic(err)
   }
